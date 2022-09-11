@@ -1,0 +1,41 @@
+.feedback {
+    padding-bottom: 26px;
+
+    &__wrapper {
+        max-width: 915px;
+    }
+
+    &__people {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__img {
+        width: 169px;
+        height: 169px;
+    }
+    &__bio {
+        width: 680px;
+        margin: 0 auto;
+    }
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        color: #0D0D0D;
+    }
+    &__progress {
+        font-weight: 500;
+        font-size: 14px;
+        color: #646464;
+    }
+    &__comment {
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 16px;
+        color: #0D0D0D;
+        span {
+            font-style: italic;
+        }
+
+    }
+}
