@@ -34,4 +34,23 @@ $(document).ready(function(){
 
       toggleSlide('.catalog-item__link');
       toggleSlide('.catalog-item__back')
+
+      /* Modal окна */
+
+      $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow');
+      });
+      $('.modal__close').on('click', function() {
+        $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
+      });
+      $('.button_mini').on('click', function() {
+        $('.overlay, #order').fadeIn('slow');
+      });
+
+      $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+        });
+      });
+
   });
