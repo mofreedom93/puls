@@ -53,4 +53,47 @@ $(document).ready(function(){
         });
       });
 
+      /* Пишим код что бы правильно вводили данные в всплывающих окнах, плюс css что бы отображалось где была ошибка и т д  
+            .error {
+                border: 1px solid red;
+            }
+            label.error {
+                border: none;
+                text-align: center;
+                margin-bottom: 15px;
+            }  Это мы уже задаем стили в css*/
+
+      function valideForms(form) {
+        $(form).validate ({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Как мамка назвала?",
+                    minlength: jQuery.validator.format("Пиши {0} символов")
+                },
+                phone: "Есть позвонить?",
+                email: {
+                    required: "Почта жи есть?",
+                    email: "Голубям нужна твоя собака"
+                }
+            }
+          });
+      };
+
+      valideForms('#consultation-form');
+      valideForms('#consultation form');
+      valideForms('#order form');
+
+      $('input[name=phone]').mask("+7 (999) 999-99-99"); 
+
   });
