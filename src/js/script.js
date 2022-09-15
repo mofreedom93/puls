@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function() {
     $('.carousel__inner').slick({
         speed: 700,
 /*         adaptiveHeight: true, */
@@ -95,5 +95,47 @@ $(document).ready(function(){
       valideForms('#order form');
 
       $('input[name=phone]').mask("+7 (999) 999-99-99"); 
+
+        /* создаем отправку email на почту когда люди заполняют форму в всплывающих окнах */
+
+      $('form').submit(function(e) {
+        e.preventDefault();
+
+        if(!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $(this).serialize()
+        }).done(function() {
+            $(this).find("input").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+
+
+            $('form').trigger('reset');
+        });
+        return false;
+      });
+
+      /* скрипт для стрелки скрола вверх */
+
+      $(window).scroll(function(){
+        if ($(this).scrollTop() > 1000) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+      });
+
+      /* скрипт для стрелки плавного скрола вверх */
+
+      $("a[href^='#']").click(function(){
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+      });
 
   });
