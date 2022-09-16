@@ -8,13 +8,14 @@
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
     <section id="up" class="promo">
         <div class="container">
-            <header class="header">
+            <header class="header pulse wow" data-wow-duration="2s" data-wow-delay=".05s">
                 <a href"#" class="header__logo">
                     <img src="icons/running-man-2-64.png" alt="logo">
                 </a>
@@ -357,8 +358,8 @@
     <section class="feedback">
         <div class="container">
             <div class="title">отзывы клиентов</div>
-            <div class="feedback__wrapper">
-                <div class="feedback__people">
+            <div class="feedback__wrapper" >
+                <div class="feedback__people fadeInUp wow" data-wow-duration="2s" data-wow-delay=".2s">
                     <img src="icons/photo_1.png" alt="foto" class="feedback__img">
                     <div class="feedback__bio">
                         <div class="feedback__name">Ирина Иванченко </div>
@@ -366,7 +367,7 @@
                         <div class="feedback__comment">Не знала, что себе купить - обратилась к ребятам из <span>RunSmart</span> - подобрали<br> пульсометр, который подошёл именно под мои цели и финансовые возможности.<br>Через некоторое время решила обновить гаджет - не раздумывая обратилась туда <br>же. <br><br>Новые цели - новый гаджет!<br><br> Спасибо, <span>RunSmart!</span> </div>
                     </div>
                 </div>
-                <div class="feedback__people">
+                <div class="feedback__people fadeInUp wow" data-wow-duration="3s" data-wow-delay=".4s">
                     <img src="icons/photo_2.png" alt="foto" class="feedback__img">
                     <div class="feedback__bio">
                         <div class="feedback__name">Иван Сёмочкин </div>
@@ -374,7 +375,7 @@
                         <div class="feedback__comment">Крутая штука-пульсометр. Обычно без них бегал. Оказывается только хуже себе <br>делал.<br>Купил пульсометр, ещё в подарок получил тренировку. Со мной вместе провели<br> первую тренировку, научили пользоваться новым гаджетом. Также объяснили <br> основы анатомии, составили план тренировок на месяц вперёд.<br><br>С ними подготовился к своему первому полумарафону! Спасибо!!!</div>
                     </div>
                 </div>
-                <div class="feedback__people">
+                <div class="feedback__people fadeInUp wow" data-wow-duration="4s" data-wow-delay=".6s">
                     <img src="icons/photo_3.png" alt="foto" class="feedback__img">
                     <div class="feedback__bio">
                         <div class="feedback__name">Юлия Дашкина</div>
@@ -443,6 +444,7 @@
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
